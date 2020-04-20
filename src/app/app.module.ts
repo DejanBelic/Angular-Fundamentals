@@ -29,7 +29,21 @@ import {EventRouteActivatorService} from './events/event-details/event-route-act
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [EventService, EventRouteActivatorService],
+  providers: [
+    EventService,
+    EventRouteActivatorService,
+    {
+      provide: 'canDeactivateCreateEvent',
+      useValue: checkDirtState
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
+export function checkDirtState(component: CreateEventComponent) {
+  if (component.isDirty) {
+    return window.confirm('You have not saved changes, do you really want to cancel?');
+  }
+  return false;
+}
