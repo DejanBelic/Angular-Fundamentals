@@ -1,0 +1,18 @@
+.error input {
+background-color: darkred;
+}
+
+.error ::-webkit-input-placeholder,
+.error ::-moz-placeholder,
+.error :-moz-placeholder,
+.error :-ms-input-placeholder {
+  color: #999;
+}
+
+
+
+em {
+  float: right;
+  padding-left: 10px;
+  color: #bd362f;
+}
