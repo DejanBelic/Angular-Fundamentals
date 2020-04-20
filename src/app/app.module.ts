@@ -13,6 +13,7 @@ import {EventService} from './events/shared/event.service';
 import { CreateEventComponent } from './events/create-event/create-event.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import {EventRouteActivatorService} from './events/event-details/event-route-activator.service';
+import {EventsListResolver} from './events/events-list-resolver.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {EventRouteActivatorService} from './events/event-details/event-route-act
   providers: [
     EventService,
     EventRouteActivatorService,
+    EventsListResolver,
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtState
