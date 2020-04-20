@@ -15,6 +15,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import {EventRouteActivatorService} from './events/event-details/event-route-activator.service';
 import {EventsListResolver} from './events/events-list-resolver.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
