@@ -18,6 +18,9 @@
     .navbar {
       background-color: bisque;
     }
+      li > a.active {
+        color: #F97924;
+      }
     `
   ]
 })
