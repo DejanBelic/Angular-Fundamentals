@@ -17,6 +17,7 @@ import {
   CreateEventComponent, EventsListResolver,
 } from './events';
 import {AuthService} from './user/auth.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,11 +31,12 @@ import {AuthService} from './user/auth.service';
     CreateEventComponent,
     NotFoundComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes),
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        RouterModule.forRoot(appRoutes),
+        FormsModule,
+    ],
   providers: [
     EventService,
     EventRouteActivatorService,
