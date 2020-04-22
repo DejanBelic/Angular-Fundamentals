@@ -14,10 +14,11 @@ import {
   EventDetailsComponent,
   EventService,
   EventRouteActivatorService,
-  CreateEventComponent, EventsListResolver,
+  CreateEventComponent, EventsListResolver, SessionListComponent, CreateSessionComponent,
 } from './events';
 import {AuthService} from './user/auth.service';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CollapsibleWellComponent } from './collapsible-well/collapsible-well.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +31,17 @@ import {FormsModule} from '@angular/forms';
     EventDetailsComponent,
     CreateEventComponent,
     NotFoundComponent,
+    SessionListComponent,
+    CreateSessionComponent,
+    CollapsibleWellComponent,
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        RouterModule.forRoot(appRoutes),
-        FormsModule,
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [
     EventService,
     EventRouteActivatorService,
