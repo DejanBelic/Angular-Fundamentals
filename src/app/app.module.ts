@@ -19,6 +19,7 @@ import {
 import {AuthService} from './user/auth.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CollapsibleWellComponent } from './collapsible-well/collapsible-well.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CollapsibleWellComponent } from './collapsible-well/collapsible-well.co
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FontAwesomeModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
     ReactiveFormsModule,

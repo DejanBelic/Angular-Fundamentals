@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ISession} from '../../shared';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-session-list',
@@ -8,6 +9,7 @@ import {ISession} from '../../shared';
 })
 export class SessionListComponent implements OnInit {
 @Input() sessions: ISession;
+  faCoffee = faCoffee;
   constructor() { }
 
   ngOnInit() {
