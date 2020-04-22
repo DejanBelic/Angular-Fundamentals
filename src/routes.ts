@@ -6,7 +6,7 @@ import {
   EventDetailsComponent,
   CreateEventComponent,
   EventsListResolver,
-  EventRouteActivatorService
+  EventRouteActivatorService, CreateSessionComponent
 } from './app/events';
 
 export const appRoutes: Routes = [
@@ -16,6 +16,7 @@ export const appRoutes: Routes = [
   // tslint:disable-next-line:max-line-length
   // This is saying before resolving this route call this EventRouteActivatorService and when that resolver finished and return some data add that data to propery events.
   { path: 'events/:id', component: EventDetailsComponent, canActivate: [EventRouteActivatorService]},
+  { path: 'events/session/new', component: CreateSessionComponent},
   { path: '404', component: NotFoundComponent},
   { path: '', redirectTo: '/events', pathMatch: 'full'},
   { path: 'user', loadChildren: 'src/app/user/user.module#UserModule'}

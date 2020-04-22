@@ -17,7 +17,9 @@ import {
   CreateEventComponent, EventsListResolver,
 } from './events';
 import {AuthService} from './user/auth.service';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CreateSessionComponent } from './events/event-details/create-session/create-session.component';
+import { SessionListComponent } from './events/event-details/session-list/session-list.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,16 @@ import {FormsModule} from '@angular/forms';
     EventDetailsComponent,
     CreateEventComponent,
     NotFoundComponent,
+    CreateSessionComponent,
+    SessionListComponent,
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        RouterModule.forRoot(appRoutes),
-        FormsModule,
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [
     EventService,
     EventRouteActivatorService,
