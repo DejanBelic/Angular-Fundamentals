@@ -19,4 +19,7 @@ export class EventDetailsComponent implements OnInit {
     );
   }
 
+  addSession() {
+
+  }
 }
