@@ -14,7 +14,7 @@ import {
   EventDetailsComponent,
   EventService,
   EventRouteActivatorService,
-  CreateEventComponent, EventsListResolver, SessionListComponent, CreateSessionComponent,
+  CreateEventComponent, EventsListResolver, SessionListComponent, CreateSessionComponent, DurationPipe,
 } from './events';
 import {AuthService} from './user/auth.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -35,6 +35,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     SessionListComponent,
     CreateSessionComponent,
     CollapsibleWellComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     RouterModule.forRoot(appRoutes),
     FormsModule,
     ReactiveFormsModule,
-  ],
+    ],
   providers: [
     EventService,
     EventRouteActivatorService,
