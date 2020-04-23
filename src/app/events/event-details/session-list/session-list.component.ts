@@ -10,6 +10,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 export class SessionListComponent implements OnChanges {
 @Input() sessions: ISession[];
 @Input() filterBy: string;
+@Input() sortBy: string;
   visibleSessions: ISession[] = [];
   faCoffee = faCoffee;
   constructor() { }
@@ -17,6 +18,7 @@ export class SessionListComponent implements OnChanges {
   ngOnChanges(): void {
     if (this.sessions) {
       this.filterSessions(this.filterBy);
+      this.sortBy === 'name' ? this.visibleSessions.sort(sortByNameAsc) : this.visibleSessions.sort(sortByVotesDesc);
     }
   }
   filterSessions(filter) {
@@ -28,5 +30,15 @@ export class SessionListComponent implements OnChanges {
     });
     }
   }
+}
+
+function sortByNameAsc(session1: ISession, session2: ISession) {
+  if (session1.name > session2.name) { return 1; } else if (session1.name === session2.name) { return 0 } else {
+    return -1;
+  }
+}
+
+function sortByVotesDesc(session1: ISession, session2: ISession) {
+  return session2.voters .length - session1.voters.length;
 
 }

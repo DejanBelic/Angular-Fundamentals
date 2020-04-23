@@ -26,6 +26,11 @@
     <div class="col-md-2">
       <h3 style="margin: 0">Sessions</h3>
     </div>
+    <div class="col-md-7">
+      <div style="margin-right: 20px; margin-left: 20px" (click)="sortBy='name'" class="btn-group btn-default" [class.active]="sortBy==='name'">By Name</div>
+      <div (click)="sortBy='votes'" class="btn-group btn-default" [class.active]="sortBy==='votes'">By Votes</div>
+
+    </div>
     <div class="col-md-7" style="margin-bottom: 10px">
       <button class="btn btn-default" [class.active]="filterBy === 'all'" (click)="filterBy = 'all'">All</button>
       <button class="btn btn-default" [class.active]="filterBy === 'beginner'" (click)="filterBy = 'beginner'">Beginner</button>
@@ -35,7 +40,7 @@
     <div class="col-md-2">
       <a (click)="addSession()">Add Session</a>
     </div>
-    <app-session-list [filterBy]="filterBy" *ngIf="!addMode" [sessions]="event?.sessions"></app-session-list>
+    <app-session-list [sortBy]="sortBy" [filterBy]="filterBy" *ngIf="!addMode" [sessions]="event?.sessions"></app-session-list>
     <app-create-session (cancelAddSession)="cancelAddSession()" *ngIf="addMode" (saveNewSession)="saveNewSession($event)"></app-create-session>
   </div>
 </div>
