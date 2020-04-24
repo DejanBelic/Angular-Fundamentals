@@ -18,10 +18,11 @@ import {
 } from './events';
 import {AuthService} from './user/auth.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { CollapsibleWellComponent } from './collapsible-well/collapsible-well.component';
+// import { CollapsibleWellComponent } from './collapsible-well/collapsible-well.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { CollapsibleWellComponent, JQUERY_TOKEN } from './common';
 
-
+const jQuery = window['$'];
 @NgModule({
   declarations: [
     AppComponent,
