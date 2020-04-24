@@ -20,6 +20,9 @@ import {AuthService} from './user/auth.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CollapsibleWellComponent } from './collapsible-well/collapsible-well.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {Toastr, TOASTR_TOKEN} from './common/toastr.service';
+
+declare let toastr: Toastr;
 
 @NgModule({
   declarations: [
@@ -50,6 +53,10 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     EventRouteActivatorService,
     EventsListResolver,
     AuthService,
+    {
+      provide: TOASTR_TOKEN,
+      useValue: toastr
+    },
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtState
