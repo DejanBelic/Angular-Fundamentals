@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import { faHeart, faHeartBroken } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-up-vote',
@@ -8,10 +8,13 @@ import { faHeart, faHeartBroken } from '@fortawesome/free-solid-svg-icons';
 })
 export class UpVoteComponent implements OnInit {
 @Input() count: number;
-@Input() voted: boolean;
+@Input() set voted(val) {
+  this.iconColor = val ? 'red' : 'black';
+} boolean;
 @Output() vote = new EventEmitter();
 faHearth = faHeart;
-faHearthBroken = faHeartBroken;
+public iconColor: string;
+
   constructor() { }
 
   ngOnInit() {
