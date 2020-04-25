@@ -23,6 +23,7 @@ import {CollapsibleWellComponent,  JQUERY_TOKEN} from './common';
 import { SimpleModalComponent } from './common';
 import { ModalTriggerDirective } from './common';
 import { UpVoteComponent } from './events/event-details/up-vote/up-vote.component';
+import { LocationValidatorDirective } from './events/create-event/location-validator.directive';
 
 const jQuery = window['jQuery'];
 @NgModule({
@@ -42,7 +43,8 @@ const jQuery = window['jQuery'];
     DurationPipe,
     SimpleModalComponent,
     ModalTriggerDirective,
-    UpVoteComponent
+    UpVoteComponent,
+    LocationValidatorDirective
   ],
   imports: [
     BrowserModule,
