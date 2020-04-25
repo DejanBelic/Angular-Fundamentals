@@ -1,6 +1,7 @@
-  import { Component} from '@angular/core';
+  import {Component, Inject, Injector, OnInit} from '@angular/core';
   import {AuthService} from '../user/auth.service';
   import {EventService, ISession} from '../events/shared';
+  import {JQUERY_TOKEN} from '../common';
 
 @Component({
   selector: 'app-nav-bar',
@@ -32,9 +33,7 @@ export class NavbarComponent {
   foundSessions: ISession[];
   constructor(
     private authService: AuthService,
-    private eventService: EventService
-  ) {
-  }
+    private eventService: EventService) {}
 
   searchSessions(searchTerm) {
     this.eventService.searchSessions(searchTerm).subscribe(sessions => {

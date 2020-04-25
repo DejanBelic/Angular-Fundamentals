@@ -18,12 +18,12 @@ import {
 } from './events';
 import {AuthService} from './user/auth.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-// import { CollapsibleWellComponent } from './collapsible-well/collapsible-well.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import { CollapsibleWellComponent, JQUERY_TOKEN } from './common';
+import {CollapsibleWellComponent,  JQUERY_TOKEN} from './common';
 import { SimpleModalComponent } from './common';
+import { ModalTriggerDirective } from './common';
 
-const jQuery = window['$'];
+const jQuery = window['jQuery'];
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +39,8 @@ const jQuery = window['$'];
     CreateSessionComponent,
     CollapsibleWellComponent,
     DurationPipe,
-    SimpleModalComponent
+    SimpleModalComponent,
+    ModalTriggerDirective
   ],
   imports: [
     BrowserModule,
@@ -58,9 +59,9 @@ const jQuery = window['$'];
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtState
     },
-    {
-      provide: JQUERY_TOKEN, useValue: jQuery
-    }
+      {
+        provide: JQUERY_TOKEN, useValue: jQuery
+      }
   ],
   bootstrap: [AppComponent]
 })
