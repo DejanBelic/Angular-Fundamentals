@@ -13,7 +13,7 @@ export class VoterService {
   }
 
   addVoter(session: ISession, voterName: string) {
-    session.push(voterName);
+    // session.push(voterName);
   }
 
   userHasVoted(session: ISession, voterName: string) {

@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
+    "server": "node node_modules/ngf-server/server.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -24,6 +25,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@ng-bootstrap/ng-bootstrap": "^5.3.1",
     "bootstrap": "^4.4.1",
+    "ngf-server": "^1.0.2",
     "ngx-bootstrap": "^5.6.1",
     "rxjs": "~6.4.0",
     "toastr": "^2.1.4",

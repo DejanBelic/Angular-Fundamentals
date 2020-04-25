@@ -24,6 +24,7 @@ import { SimpleModalComponent } from './common';
 import { ModalTriggerDirective } from './common';
 import { UpVoteComponent } from './events/event-details/up-vote/up-vote.component';
 import { LocationValidatorDirective } from './events/create-event/location-validator.directive';
+import {HttpClientModule} from '@angular/common/http';
 
 const jQuery = window['jQuery'];
 @NgModule({
@@ -44,7 +45,7 @@ const jQuery = window['jQuery'];
     SimpleModalComponent,
     ModalTriggerDirective,
     UpVoteComponent,
-    LocationValidatorDirective
+    LocationValidatorDirective,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +54,7 @@ const jQuery = window['jQuery'];
     RouterModule.forRoot(appRoutes),
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
     ],
   providers: [
     EventService,
