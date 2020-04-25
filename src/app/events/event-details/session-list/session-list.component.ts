@@ -21,6 +21,13 @@ export class SessionListComponent implements OnChanges {
       this.sortBy === 'name' ? this.visibleSessions.sort(sortByNameAsc) : this.visibleSessions.sort(sortByVotesDesc);
     }
   }
+
+  toggleVote() {
+
+  }
+  userHasVoted() {
+
+  }
   filterSessions(filter) {
     if (filter === 'all') {
       this.visibleSessions = this.sessions.slice(0);

@@ -22,6 +22,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {CollapsibleWellComponent,  JQUERY_TOKEN} from './common';
 import { SimpleModalComponent } from './common';
 import { ModalTriggerDirective } from './common';
+import { UpVoteComponent } from './events/event-details/up-vote/up-vote.component';
 
 const jQuery = window['jQuery'];
 @NgModule({
@@ -40,7 +41,8 @@ const jQuery = window['jQuery'];
     CollapsibleWellComponent,
     DurationPipe,
     SimpleModalComponent,
-    ModalTriggerDirective
+    ModalTriggerDirective,
+    UpVoteComponent
   ],
   imports: [
     BrowserModule,
