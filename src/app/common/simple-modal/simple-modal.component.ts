@@ -9,6 +9,7 @@ import {JQUERY_TOKEN} from '../jquery.service';
 export class SimpleModalComponent implements OnInit {
 @Input() title: string;
 @Input()  elementId: string;
+@Input()  closeOnBodyClick: string;
 // @ts-ignore
   @ViewChild('modalContainer') containerEl: ElementRef;
   constructor(@Inject(JQUERY_TOKEN) private $: any) { }
@@ -17,6 +18,8 @@ export class SimpleModalComponent implements OnInit {
   }
 
   closeModal() {
-    this.$(this.containerEl.nativeElement).modal('hide');
+    if (this.closeOnBodyClick.toLowerCase() === "true") {
+      this.$(this.containerEl.nativeElement).modal('hide');
+    }
   }
 }
