@@ -13,8 +13,7 @@ import {
   EventsListComponent,
   EventDetailsComponent,
   EventService,
-  EventRouteActivatorService,
-  CreateEventComponent, EventsListResolver, SessionListComponent, CreateSessionComponent, DurationPipe,
+  CreateEventComponent, EventsListResolver, SessionListComponent, CreateSessionComponent, DurationPipe, EventResolver,
 } from './events';
 import {AuthService} from './user/auth.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -58,7 +57,7 @@ const jQuery = window['jQuery'];
     ],
   providers: [
     EventService,
-    EventRouteActivatorService,
+    EventResolver,
     EventsListResolver,
     AuthService,
     {

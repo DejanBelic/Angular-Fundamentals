@@ -13,15 +13,9 @@ export class EventService {
       .pipe(catchError(this.handleError<EventModel[]>('getEvents', [])));
   }
 
-  handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(error);
-      return of (result as T);
-    };
-  }
-
-  getEvent(id: number): EventModel {
-    return EVENTS.find(event => event.id === id);
+  getEvent(id: number): Observable<EventModel> {
+    return this.http.get<EventModel>('/api/events/' + id)
+      .pipe(catchError(this.handleError<EventModel>('getEvents')));
   }
 
   saveEvent(event) {
@@ -51,6 +45,13 @@ export class EventService {
     }, 100);
     return emitter;
   }
+  handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      return of (result as T);
+    };
+  }
+
 }
 
 const EVENTS: EventModel[] = [
