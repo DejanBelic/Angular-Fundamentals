@@ -20,7 +20,7 @@ import {EventModel} from './shared';
       <span>{{event.location?.city }}, {{event.location?.country }}</span>
     </div>
     <div [hidden]="!event.onlineUrl">
-      <a [href]="event.onlineUrl">Online URL: {{event.onlineUrl   }}</a>
+      <a [href]="event.onlineUrl">Online URL: {{event.onlineUrl}}</a>
     </div>
   </div>
   `,

@@ -28,13 +28,13 @@ export class EventService {
     return this.http.get<ISession[]>('/api/sessions/search?search=' + searchTerm)
       .pipe(catchError(this.handleError<ISession[]>('searchSessions')));
   }
+
   handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
       return of (result as T);
     };
   }
-
 }
 
 const EVENTS: EventModel[] = [
