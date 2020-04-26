@@ -26,7 +26,7 @@ export class AuthService {
   isAuthenticated() {
     return !!this.currentUser;
   }
-  checkAuthenticationStatus() {
+  checkAuthenticationStatus()  {
     this.http.get('/api/currentIdentity')
       .pipe(tap(data => {
         if (data instanceof Object) {
@@ -37,6 +37,11 @@ export class AuthService {
   }
 
   updateCurrentUser(firstName: string, lastName: string) {
+    const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json'})};
+    this.http.put(`/api/users/${this.currentUser.id}`, this.currentUser, options)
+      .subscribe(() => {
+        alert('Profile saved.');
+      })
     this.currentUser.firstName = firstName;
     this.currentUser.lastName = lastName;
   }
